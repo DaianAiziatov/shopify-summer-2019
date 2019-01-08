@@ -18,7 +18,8 @@ struct APIClient {
         return URLSession.shared
     }()
     
-    mutating func fetchCustomCollections(with request: APIRequest, completion: @escaping (Result<CustomCollection, DataResponseError>) -> Void) {
+    mutating func fetchCustomCollections(with request: APIRequest,
+                                         completion: @escaping (Result<CustomCollectionsAPIResponse, DataResponseError>) -> Void) {
         let urlRequest = URLRequest(url: baseURL.appendingPathComponent(request.customCollectionsPath))
         let parameters = ["access_token" : request.accessToken]
         var encodedURLRequest = urlRequest.encode(with: parameters)
@@ -32,7 +33,7 @@ struct APIClient {
                     completion(Result.failure(DataResponseError.network))
                     return
             }
-            guard let decodedResponse = try? JSONDecoder().decode(CustomCollection.self, from: data) else {
+            guard let decodedResponse = try? JSONDecoder().decode(CustomCollectionsAPIResponse.self, from: data) else {
                 completion(Result.failure(DataResponseError.decoding))
                 return
             }

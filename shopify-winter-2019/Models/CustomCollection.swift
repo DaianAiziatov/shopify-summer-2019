@@ -32,7 +32,8 @@ extension CustomCollection: Decodable {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         id = try values.decode(Int.self, forKey: .id)
-        title = try values.decode(String.self, forKey: .title)
+        let fullTitle = try values.decode(String.self, forKey: .title)
+        title = String(fullTitle.split(separator: " ")[0])
         bodyHTML = try values.decode(String.self, forKey: .bodyHTML)
         
         let image = try values.nestedContainer(keyedBy: ImageKey.self, forKey: .image)

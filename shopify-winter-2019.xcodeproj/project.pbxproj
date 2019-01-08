@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2BECDF4321E54FCB002CDF0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BECDF4221E54FCB002CDF0D /* AppDelegate.swift */; };
-		2BECDF4521E54FCB002CDF0D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BECDF4421E54FCB002CDF0D /* ViewController.swift */; };
 		2BECDF4821E54FCB002CDF0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BECDF4621E54FCB002CDF0D /* Main.storyboard */; };
 		2BECDF4A21E54FCD002CDF0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BECDF4921E54FCD002CDF0D /* Assets.xcassets */; };
 		2BECDF4D21E54FCD002CDF0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BECDF4B21E54FCD002CDF0D /* LaunchScreen.storyboard */; };
@@ -19,12 +18,13 @@
 		2BECDF5D21E55A25002CDF0D /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BECDF5C21E55A25002CDF0D /* Result.swift */; };
 		2BECDF5F21E55A5A002CDF0D /* DataResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BECDF5E21E55A5A002CDF0D /* DataResponseError.swift */; };
 		2BECDF6321E55AA4002CDF0D /* HTTPURLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BECDF6221E55AA4002CDF0D /* HTTPURLResponse.swift */; };
+		2BECDF6521E55CCC002CDF0D /* CustomCollectionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BECDF6421E55CCC002CDF0D /* CustomCollectionsTableViewController.swift */; };
+		2BECDF6721E5600F002CDF0D /* CustomCollectionsAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BECDF6621E5600F002CDF0D /* CustomCollectionsAPIResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2BECDF3F21E54FCB002CDF0D /* shopify-winter-2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "shopify-winter-2019.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BECDF4221E54FCB002CDF0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2BECDF4421E54FCB002CDF0D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2BECDF4721E54FCB002CDF0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2BECDF4921E54FCD002CDF0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BECDF4C21E54FCD002CDF0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +36,8 @@
 		2BECDF5C21E55A25002CDF0D /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		2BECDF5E21E55A5A002CDF0D /* DataResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResponseError.swift; sourceTree = "<group>"; };
 		2BECDF6221E55AA4002CDF0D /* HTTPURLResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPURLResponse.swift; sourceTree = "<group>"; };
+		2BECDF6421E55CCC002CDF0D /* CustomCollectionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionsTableViewController.swift; sourceTree = "<group>"; };
+		2BECDF6621E5600F002CDF0D /* CustomCollectionsAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionsAPIResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,11 +73,11 @@
 				2BECDF6121E55A70002CDF0D /* Models */,
 				2BECDF6021E55A67002CDF0D /* Networking */,
 				2BECDF4221E54FCB002CDF0D /* AppDelegate.swift */,
-				2BECDF4421E54FCB002CDF0D /* ViewController.swift */,
 				2BECDF4621E54FCB002CDF0D /* Main.storyboard */,
 				2BECDF4921E54FCD002CDF0D /* Assets.xcassets */,
 				2BECDF4B21E54FCD002CDF0D /* LaunchScreen.storyboard */,
 				2BECDF4E21E54FCD002CDF0D /* Info.plist */,
+				2BECDF6421E55CCC002CDF0D /* CustomCollectionsTableViewController.swift */,
 			);
 			path = "shopify-winter-2019";
 			sourceTree = "<group>";
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				2BECDF5621E555D6002CDF0D /* CustomCollection.swift */,
+				2BECDF6621E5600F002CDF0D /* CustomCollectionsAPIResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -173,11 +176,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BECDF5721E555D6002CDF0D /* CustomCollection.swift in Sources */,
-				2BECDF4521E54FCB002CDF0D /* ViewController.swift in Sources */,
 				2BECDF4321E54FCB002CDF0D /* AppDelegate.swift in Sources */,
+				2BECDF6721E5600F002CDF0D /* CustomCollectionsAPIResponse.swift in Sources */,
 				2BECDF5521E55250002CDF0D /* APIClient.swift in Sources */,
 				2BECDF5D21E55A25002CDF0D /* Result.swift in Sources */,
 				2BECDF6321E55AA4002CDF0D /* HTTPURLResponse.swift in Sources */,
+				2BECDF6521E55CCC002CDF0D /* CustomCollectionsTableViewController.swift in Sources */,
 				2BECDF5F21E55A5A002CDF0D /* DataResponseError.swift in Sources */,
 				2BECDF5B21E55908002CDF0D /* APIRequest.swift in Sources */,
 				2BECDF5921E55899002CDF0D /* URLRequest.swift in Sources */,

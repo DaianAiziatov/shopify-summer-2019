@@ -28,6 +28,7 @@
 		2BECDF7821E58F3B002CDF0D /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BECDF7721E58F3B002CDF0D /* Product.swift */; };
 		2BECDF7A21E59034002CDF0D /* Variant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BECDF7921E59034002CDF0D /* Variant.swift */; };
 		2BECDF7C21E592D7002CDF0D /* PriductsAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BECDF7B21E592D7002CDF0D /* PriductsAPIResponse.swift */; };
+		2BECDF7E21E59D8B002CDF0D /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BECDF7D21E59D8B002CDF0D /* DetailsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		2BECDF7721E58F3B002CDF0D /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		2BECDF7921E59034002CDF0D /* Variant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variant.swift; sourceTree = "<group>"; };
 		2BECDF7B21E592D7002CDF0D /* PriductsAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriductsAPIResponse.swift; sourceTree = "<group>"; };
+		2BECDF7D21E59D8B002CDF0D /* DetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				2BECDF6421E55CCC002CDF0D /* CustomCollectionsTableViewController.swift */,
+				2BECDF7D21E59D8B002CDF0D /* DetailsTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				2BECDF7221E56A80002CDF0D /* UIImageView.swift in Sources */,
 				2BECDF7821E58F3B002CDF0D /* Product.swift in Sources */,
 				2BECDF5721E555D6002CDF0D /* CustomCollection.swift in Sources */,
+				2BECDF7E21E59D8B002CDF0D /* DetailsTableViewController.swift in Sources */,
 				2BECDF4321E54FCB002CDF0D /* AppDelegate.swift in Sources */,
 				2BECDF6721E5600F002CDF0D /* CustomCollectionsAPIResponse.swift in Sources */,
 				2BECDF7C21E592D7002CDF0D /* PriductsAPIResponse.swift in Sources */,

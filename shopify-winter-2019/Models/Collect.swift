@@ -10,7 +10,7 @@ import Foundation
 
 struct Collect: Decodable {
     
-    private(set) var productID: String
+    private(set) var productID: Int
     
     enum CodingKeys: String, CodingKey {
         case productID = "product_id"

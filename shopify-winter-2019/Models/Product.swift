@@ -11,7 +11,6 @@ import Foundation
 struct Product: Decodable {
     
     private(set) var name: String
-    private(set) var totalAvailable: Int?
     private(set) var variants: [Variant]
     
     enum CodingKeys: String, CodingKey {

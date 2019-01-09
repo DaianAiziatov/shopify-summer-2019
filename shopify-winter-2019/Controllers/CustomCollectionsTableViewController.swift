@@ -16,6 +16,7 @@ class CustomCollectionsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.clearsSelectionOnViewWillAppear = false
         tableView.register(UINib(nibName: "CustomCollectionCell", bundle: nil), forCellReuseIdentifier: "CollectionCell")
         fetchCustomCollections()
     }
@@ -25,7 +26,7 @@ class CustomCollectionsTableViewController: UITableViewController {
         client.fetchCustomCollections(with: request) { result in
             switch result {
             case .failure(let error):
-                print(error.localizedDescription)
+                print(error.reason)
             case .success(let response):
                 DispatchQueue.main.async {
                     print(response)
@@ -50,6 +51,19 @@ extension CustomCollectionsTableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionCell") as! CustomCollectionCell
         cell.configure(with: collections[indexPath.row])
         return cell
+    }
+    
+}
+
+// MARK: - Table view delegate
+
+extension CustomCollectionsTableViewController {
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let detailsVC = sb.instantiateViewController(withIdentifier: "detailsVC") as! DetailsTableViewController
+        detailsVC.collection = collections[indexPath.row]
+        self.navigationController?.pushViewController(detailsVC, animated: true)
     }
     
 }

@@ -16,6 +16,7 @@ class CustomCollectionsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(UINib(nibName: "CustomCollectionCell", bundle: nil), forCellReuseIdentifier: "CollectionCell")
         fetchCustomCollections()
     }
 
@@ -46,15 +47,9 @@ extension CustomCollectionsTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionCell")
-        cell?.textLabel?.text = collections[indexPath.row].title
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionCell") as! CustomCollectionCell
+        cell.configure(with: collections[indexPath.row])
+        return cell
     }
-    
-}
-
-extension CustomCollectionsTableViewController {
-    
-    
     
 }

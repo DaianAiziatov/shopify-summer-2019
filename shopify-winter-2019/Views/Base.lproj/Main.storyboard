@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="L6D-i3-HWl">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Custom Collections-->
+        <scene sceneID="tJe-0b-zUJ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7xf-cJ-n9J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="bh9-hP-ZIr" customClass="CustomCollectionsTableViewController" customModule="shopify_winter_2019" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7rm-5F-rjY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <connections>
+                            <outlet property="dataSource" destination="bh9-hP-ZIr" id="0By-3v-oFe"/>
+                            <outlet property="delegate" destination="bh9-hP-ZIr" id="TXP-bV-BAO"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Custom Collections" id="Obw-2n-fYS"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="984.79999999999995" y="123.68815592203899"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="YLZ-Ja-lpE">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c7U-f0-k6p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L6D-i3-HWl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="949-bk-kJH">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bh9-hP-ZIr" kind="relationship" relationship="rootViewController" id="qhN-Xz-dWh"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="45.600000000000001" y="123.68815592203899"/>
+        </scene>
+    </scenes>
+</document>

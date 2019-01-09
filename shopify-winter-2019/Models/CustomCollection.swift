@@ -12,13 +12,13 @@ struct CustomCollection {
     
     private(set) var id: Int
     private(set) var title: String
-    private(set) var bodyHTML: String
+    private(set) var description: String
     private(set) var imageURL: String
     
     enum CodingKeys: String, CodingKey {
         case id
         case title
-        case bodyHTML = "body_html"
+        case description = "body_html"
         case image
     }
     
@@ -34,7 +34,7 @@ extension CustomCollection: Decodable {
         id = try values.decode(Int.self, forKey: .id)
         let fullTitle = try values.decode(String.self, forKey: .title)
         title = String(fullTitle.split(separator: " ")[0])
-        bodyHTML = try values.decode(String.self, forKey: .bodyHTML)
+        description = try values.decode(String.self, forKey: .description)
         
         let image = try values.nestedContainer(keyedBy: ImageKey.self, forKey: .image)
         imageURL = try image.decode(String.self, forKey: .imageURL)

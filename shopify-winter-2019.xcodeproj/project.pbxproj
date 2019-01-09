@@ -23,6 +23,11 @@
 		2BECDF6E21E56478002CDF0D /* CustomCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BECDF6C21E56478002CDF0D /* CustomCollectionCell.swift */; };
 		2BECDF6F21E56478002CDF0D /* CustomCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BECDF6D21E56478002CDF0D /* CustomCollectionCell.xib */; };
 		2BECDF7221E56A80002CDF0D /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BECDF7121E56A80002CDF0D /* UIImageView.swift */; };
+		2BECDF7421E58CD7002CDF0D /* Collect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BECDF7321E58CD7002CDF0D /* Collect.swift */; };
+		2BECDF7621E58DA4002CDF0D /* CollectsAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BECDF7521E58DA4002CDF0D /* CollectsAPIResponse.swift */; };
+		2BECDF7821E58F3B002CDF0D /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BECDF7721E58F3B002CDF0D /* Product.swift */; };
+		2BECDF7A21E59034002CDF0D /* Variant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BECDF7921E59034002CDF0D /* Variant.swift */; };
+		2BECDF7C21E592D7002CDF0D /* PriductsAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BECDF7B21E592D7002CDF0D /* PriductsAPIResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +49,11 @@
 		2BECDF6C21E56478002CDF0D /* CustomCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionCell.swift; sourceTree = "<group>"; };
 		2BECDF6D21E56478002CDF0D /* CustomCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCollectionCell.xib; sourceTree = "<group>"; };
 		2BECDF7121E56A80002CDF0D /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		2BECDF7321E58CD7002CDF0D /* Collect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collect.swift; sourceTree = "<group>"; };
+		2BECDF7521E58DA4002CDF0D /* CollectsAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectsAPIResponse.swift; sourceTree = "<group>"; };
+		2BECDF7721E58F3B002CDF0D /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		2BECDF7921E59034002CDF0D /* Variant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variant.swift; sourceTree = "<group>"; };
+		2BECDF7B21E592D7002CDF0D /* PriductsAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriductsAPIResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +115,11 @@
 			children = (
 				2BECDF5621E555D6002CDF0D /* CustomCollection.swift */,
 				2BECDF6621E5600F002CDF0D /* CustomCollectionsAPIResponse.swift */,
+				2BECDF7321E58CD7002CDF0D /* Collect.swift */,
+				2BECDF7521E58DA4002CDF0D /* CollectsAPIResponse.swift */,
+				2BECDF7721E58F3B002CDF0D /* Product.swift */,
+				2BECDF7921E59034002CDF0D /* Variant.swift */,
+				2BECDF7B21E592D7002CDF0D /* PriductsAPIResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -225,10 +240,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BECDF7621E58DA4002CDF0D /* CollectsAPIResponse.swift in Sources */,
 				2BECDF7221E56A80002CDF0D /* UIImageView.swift in Sources */,
+				2BECDF7821E58F3B002CDF0D /* Product.swift in Sources */,
 				2BECDF5721E555D6002CDF0D /* CustomCollection.swift in Sources */,
 				2BECDF4321E54FCB002CDF0D /* AppDelegate.swift in Sources */,
 				2BECDF6721E5600F002CDF0D /* CustomCollectionsAPIResponse.swift in Sources */,
+				2BECDF7C21E592D7002CDF0D /* PriductsAPIResponse.swift in Sources */,
 				2BECDF6E21E56478002CDF0D /* CustomCollectionCell.swift in Sources */,
 				2BECDF5521E55250002CDF0D /* APIClient.swift in Sources */,
 				2BECDF5D21E55A25002CDF0D /* Result.swift in Sources */,
@@ -236,6 +254,8 @@
 				2BECDF6521E55CCC002CDF0D /* CustomCollectionsTableViewController.swift in Sources */,
 				2BECDF5F21E55A5A002CDF0D /* DataResponseError.swift in Sources */,
 				2BECDF5B21E55908002CDF0D /* APIRequest.swift in Sources */,
+				2BECDF7A21E59034002CDF0D /* Variant.swift in Sources */,
+				2BECDF7421E58CD7002CDF0D /* Collect.swift in Sources */,
 				2BECDF5921E55899002CDF0D /* URLRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

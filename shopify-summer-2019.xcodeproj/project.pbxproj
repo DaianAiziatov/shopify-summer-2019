@@ -32,7 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2BECDF3F21E54FCB002CDF0D /* shopify-winter-2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "shopify-winter-2019.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BECDF3F21E54FCB002CDF0D /* shopify-summer-2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "shopify-summer-2019.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BECDF4221E54FCB002CDF0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BECDF4721E54FCB002CDF0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2BECDF4921E54FCD002CDF0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 		2BECDF3621E54FCB002CDF0D = {
 			isa = PBXGroup;
 			children = (
-				2BECDF4121E54FCB002CDF0D /* shopify-winter-2019 */,
+				2BECDF4121E54FCB002CDF0D /* shopify-summer-2019 */,
 				2BECDF4021E54FCB002CDF0D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -80,12 +80,12 @@
 		2BECDF4021E54FCB002CDF0D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2BECDF3F21E54FCB002CDF0D /* shopify-winter-2019.app */,
+				2BECDF3F21E54FCB002CDF0D /* shopify-summer-2019.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2BECDF4121E54FCB002CDF0D /* shopify-winter-2019 */ = {
+		2BECDF4121E54FCB002CDF0D /* shopify-summer-2019 */ = {
 			isa = PBXGroup;
 			children = (
 				2BECDF7021E56A66002CDF0D /* Extensions */,
@@ -96,7 +96,7 @@
 				2BECDF6021E55A67002CDF0D /* Networking */,
 				2BECDF4221E54FCB002CDF0D /* AppDelegate.swift */,
 			);
-			path = "shopify-winter-2019";
+			path = "shopify-summer-2019";
 			sourceTree = "<group>";
 		};
 		2BECDF6021E55A67002CDF0D /* Networking */ = {
@@ -174,9 +174,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2BECDF3E21E54FCB002CDF0D /* shopify-winter-2019 */ = {
+		2BECDF3E21E54FCB002CDF0D /* shopify-summer-2019 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2BECDF5121E54FCD002CDF0D /* Build configuration list for PBXNativeTarget "shopify-winter-2019" */;
+			buildConfigurationList = 2BECDF5121E54FCD002CDF0D /* Build configuration list for PBXNativeTarget "shopify-summer-2019" */;
 			buildPhases = (
 				2BECDF3B21E54FCB002CDF0D /* Sources */,
 				2BECDF3C21E54FCB002CDF0D /* Frameworks */,
@@ -186,9 +186,9 @@
 			);
 			dependencies = (
 			);
-			name = "shopify-winter-2019";
+			name = "shopify-summer-2019";
 			productName = "shopify-winter-2019";
-			productReference = 2BECDF3F21E54FCB002CDF0D /* shopify-winter-2019.app */;
+			productReference = 2BECDF3F21E54FCB002CDF0D /* shopify-summer-2019.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -206,7 +206,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2BECDF3A21E54FCB002CDF0D /* Build configuration list for PBXProject "shopify-winter-2019" */;
+			buildConfigurationList = 2BECDF3A21E54FCB002CDF0D /* Build configuration list for PBXProject "shopify-summer-2019" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -219,7 +219,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2BECDF3E21E54FCB002CDF0D /* shopify-winter-2019 */,
+				2BECDF3E21E54FCB002CDF0D /* shopify-summer-2019 */,
 			);
 		};
 /* End PBXProject section */
@@ -408,12 +408,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WXMC8MD6TM;
-				INFOPLIST_FILE = "shopify-winter-2019/Info.plist";
+				INFOPLIST_FILE = "shopify-summer-2019/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.daian.shopify-winter-2019";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.daian.shopify-summer-2019";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -426,12 +426,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WXMC8MD6TM;
-				INFOPLIST_FILE = "shopify-winter-2019/Info.plist";
+				INFOPLIST_FILE = "shopify-summer-2019/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.daian.shopify-winter-2019";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.daian.shopify-summer-2019";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -441,7 +441,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2BECDF3A21E54FCB002CDF0D /* Build configuration list for PBXProject "shopify-winter-2019" */ = {
+		2BECDF3A21E54FCB002CDF0D /* Build configuration list for PBXProject "shopify-summer-2019" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2BECDF4F21E54FCD002CDF0D /* Debug */,
@@ -450,7 +450,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2BECDF5121E54FCD002CDF0D /* Build configuration list for PBXNativeTarget "shopify-winter-2019" */ = {
+		2BECDF5121E54FCD002CDF0D /* Build configuration list for PBXNativeTarget "shopify-summer-2019" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2BECDF5221E54FCD002CDF0D /* Debug */,

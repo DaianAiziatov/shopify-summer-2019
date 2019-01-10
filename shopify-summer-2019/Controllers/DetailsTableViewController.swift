@@ -21,6 +21,7 @@ class DetailsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.clearsSelectionOnViewWillAppear = false
+        self.title = "Products"
         tableView.register(UINib(nibName: "ProductCell", bundle: nil), forCellReuseIdentifier: "ProductCell")
         fetchCollects()
     }
@@ -30,6 +31,7 @@ class DetailsTableViewController: UITableViewController {
         self.navigationController?.hidesBarsOnSwipe = false
     }
     
+    // MARK: - Retrieving the list of collects in a specific collection first
     private func fetchCollects() {
         client.fetchCollects(with: request, collection: collection) { result in
             switch result {
@@ -44,6 +46,7 @@ class DetailsTableViewController: UITableViewController {
         }
     }
     
+    // MARK: - Finally fetching the products from specific collection
     private func fetchProducts() {
         client.fetchProducts(with: request, collects: collects) { result in
             switch result {
@@ -87,7 +90,9 @@ extension DetailsTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 300.0
+        let header: CustomCollectionCell = .fromNib()
+        header.configure(with: collection)
+        return header.bounds.height
     }
     
 }

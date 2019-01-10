@@ -11,6 +11,7 @@ import Foundation
 typealias Parameters = [String: String]
 
 extension URLRequest {
+    
     func encode(with parameters: Parameters?) -> URLRequest {
         guard let parameters = parameters else {
             return self

@@ -19,17 +19,8 @@ class CustomCollectionsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.clearsSelectionOnViewWillAppear = false
-        tableView.register(UINib(nibName: "CustomCollectionCell", bundle: nil), forCellReuseIdentifier: "CollectionCell")
-        //search controller preparation
-        searchController.hidesNavigationBarDuringPresentation = false
-        searchController.searchBar.delegate = self
-        searchController.searchBar.placeholder = "Search"
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.searchBarStyle = .minimal
-        definesPresentationContext = true
-        self.navigationItem.titleView = self.searchController.searchBar;
-        self.navigationItem.hidesSearchBarWhenScrolling = true
-        
+        cellRegistration()
+        searchControllerSetup()
         fetchCustomCollections()
     }
     
@@ -39,6 +30,7 @@ class CustomCollectionsTableViewController: UITableViewController {
 
     
     private func fetchCustomCollections() {
+        loadingAlertStart()
         client.fetchCustomCollections(with: request) { result in
             switch result {
             case .failure(let error):
@@ -47,10 +39,27 @@ class CustomCollectionsTableViewController: UITableViewController {
                 DispatchQueue.main.async {
                     self.collections.append(contentsOf: response.collections)
                     self.tableView.reloadData()
+                    self.dismiss(animated: true, completion: nil)
                 }
             }
         }
     }
+    
+    private func searchControllerSetup() {
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.delegate = self
+        searchController.searchBar.placeholder = "Search"
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.searchBarStyle = .minimal
+        definesPresentationContext = true
+        self.navigationItem.titleView = self.searchController.searchBar;
+        self.navigationItem.hidesSearchBarWhenScrolling = true
+    }
+    
+    private func cellRegistration() {
+        tableView.register(UINib(nibName: "CustomCollectionCell", bundle: nil), forCellReuseIdentifier: "CollectionCell")
+    }
+    
 
 }
 

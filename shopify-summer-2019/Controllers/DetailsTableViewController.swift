@@ -33,6 +33,7 @@ class DetailsTableViewController: UITableViewController {
     
     // MARK: - Retrieving the list of collects in a specific collection first
     private func fetchCollects() {
+        loadingAlertStart()
         client.fetchCollects(with: request, collection: collection) { result in
             switch result {
             case .failure(let error):
@@ -56,6 +57,7 @@ class DetailsTableViewController: UITableViewController {
                 DispatchQueue.main.async {
                     self.products.append(contentsOf: response.products)
                     self.tableView.reloadData()
+                    self.dismiss(animated: true, completion: nil)
                 }
             }
         }

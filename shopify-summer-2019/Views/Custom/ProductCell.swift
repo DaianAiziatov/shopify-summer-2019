@@ -42,7 +42,7 @@ class ProductCell: UITableViewCell {
             containerView.isHidden = false
             nameLabel.text = product.name
             vendorLabel.text = product.vendor
-            totalLabel.text = "Total: \(product.calculateTotalAvailable())"
+            totalLabel.text = "Total: \(product.totalAvailable ?? 0)"
             productImageView.downloaded(from: URL(string: product.imageURL)!,
                                         contentMode: .scaleToFill)
             activityIndicator.stopAnimating()

@@ -14,6 +14,7 @@ struct Product {
     private(set) var vendor: String
     private(set) var variants: [Variant]
     private(set) var imageURL: String
+    private(set) var totalAvailable: Int?
     
     enum CodingKeys: String, CodingKey {
         case name = "title"
@@ -26,12 +27,12 @@ struct Product {
         case imageURL = "src"
     }
     
-    func calculateTotalAvailable() -> Int {
-        var total = 0;
+    private mutating func calculateTotalAvailable() {
+        var total = 0
         for variant in variants {
             total += variant.quantity
         }
-        return total
+        self.totalAvailable = total
     }
 }
 
@@ -42,9 +43,11 @@ extension Product: Decodable {
         name = try values.decode(String.self, forKey: .name)
         vendor = try values.decode(String.self, forKey: .vendor)
         variants = try values.decode([Variant].self, forKey: .variants)
-    
+        
         let image = try values.nestedContainer(keyedBy: ImageKey.self, forKey: .image)
         imageURL = try image.decode(String.self, forKey: .imageURL)
+        
+        self.calculateTotalAvailable()
     }
     
 }

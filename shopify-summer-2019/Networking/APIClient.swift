@@ -26,7 +26,6 @@ struct APIClient {
         let parameters = ["access_token" : request.accessToken]
         var encodedURLRequest = urlRequest.encode(with: parameters)
         encodedURLRequest.setValue("application/json", forHTTPHeaderField: "Accept")
-        print(encodedURLRequest)
         session.dataTask(with: encodedURLRequest, completionHandler: { data, response, error in
             guard
                 let httpResponse = response as? HTTPURLResponse,

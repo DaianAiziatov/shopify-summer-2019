@@ -20,6 +20,9 @@ class CustomCollectionCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        containerView.makeBorders(with: 10.0)
+        addShadows()
+        backgroundColor = .clear
         titleLabel.sizeToFit()
         descriptionLabel.numberOfLines = 0
         descriptionLabel.sizeToFit()

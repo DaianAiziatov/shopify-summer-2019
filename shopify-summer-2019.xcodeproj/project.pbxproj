@@ -27,8 +27,9 @@
 		2BECDF7621E58DA4002CDF0D /* CollectsAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BECDF7521E58DA4002CDF0D /* CollectsAPIResponse.swift */; };
 		2BECDF7821E58F3B002CDF0D /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BECDF7721E58F3B002CDF0D /* Product.swift */; };
 		2BECDF7A21E59034002CDF0D /* Variant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BECDF7921E59034002CDF0D /* Variant.swift */; };
-		2BECDF7C21E592D7002CDF0D /* PriductsAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BECDF7B21E592D7002CDF0D /* PriductsAPIResponse.swift */; };
+		2BECDF7C21E592D7002CDF0D /* ProductsAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BECDF7B21E592D7002CDF0D /* ProductsAPIResponse.swift */; };
 		2BECDF7E21E59D8B002CDF0D /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BECDF7D21E59D8B002CDF0D /* DetailsTableViewController.swift */; };
+		2BECDF8021E6D158002CDF0D /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BECDF7F21E6D158002CDF0D /* UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,8 +55,9 @@
 		2BECDF7521E58DA4002CDF0D /* CollectsAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectsAPIResponse.swift; sourceTree = "<group>"; };
 		2BECDF7721E58F3B002CDF0D /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		2BECDF7921E59034002CDF0D /* Variant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variant.swift; sourceTree = "<group>"; };
-		2BECDF7B21E592D7002CDF0D /* PriductsAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriductsAPIResponse.swift; sourceTree = "<group>"; };
+		2BECDF7B21E592D7002CDF0D /* ProductsAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsAPIResponse.swift; sourceTree = "<group>"; };
 		2BECDF7D21E59D8B002CDF0D /* DetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewController.swift; sourceTree = "<group>"; };
+		2BECDF7F21E6D158002CDF0D /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +123,7 @@
 				2BECDF7521E58DA4002CDF0D /* CollectsAPIResponse.swift */,
 				2BECDF7721E58F3B002CDF0D /* Product.swift */,
 				2BECDF7921E59034002CDF0D /* Variant.swift */,
-				2BECDF7B21E592D7002CDF0D /* PriductsAPIResponse.swift */,
+				2BECDF7B21E592D7002CDF0D /* ProductsAPIResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				2BECDF7121E56A80002CDF0D /* UIImageView.swift */,
+				2BECDF7F21E6D158002CDF0D /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -250,12 +253,13 @@
 				2BECDF7E21E59D8B002CDF0D /* DetailsTableViewController.swift in Sources */,
 				2BECDF4321E54FCB002CDF0D /* AppDelegate.swift in Sources */,
 				2BECDF6721E5600F002CDF0D /* CustomCollectionsAPIResponse.swift in Sources */,
-				2BECDF7C21E592D7002CDF0D /* PriductsAPIResponse.swift in Sources */,
+				2BECDF7C21E592D7002CDF0D /* ProductsAPIResponse.swift in Sources */,
 				2BECDF6E21E56478002CDF0D /* CustomCollectionCell.swift in Sources */,
 				2BECDF5521E55250002CDF0D /* APIClient.swift in Sources */,
 				2BECDF5D21E55A25002CDF0D /* Result.swift in Sources */,
 				2BECDF6321E55AA4002CDF0D /* HTTPURLResponse.swift in Sources */,
 				2BECDF6521E55CCC002CDF0D /* CustomCollectionsTableViewController.swift in Sources */,
+				2BECDF8021E6D158002CDF0D /* UIView.swift in Sources */,
 				2BECDF5F21E55A5A002CDF0D /* DataResponseError.swift in Sources */,
 				2BECDF5B21E55908002CDF0D /* APIRequest.swift in Sources */,
 				2BECDF7A21E59034002CDF0D /* Variant.swift in Sources */,

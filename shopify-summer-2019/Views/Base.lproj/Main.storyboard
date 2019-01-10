@@ -12,9 +12,8 @@
         <!--Custom Collections-->
         <scene sceneID="tJe-0b-zUJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7xf-cJ-n9J" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="bh9-hP-ZIr" customClass="CustomCollectionsTableViewController" customModule="shopify_winter_2019" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7rm-5F-rjY">
+                <tableViewController id="bh9-hP-ZIr" customClass="CustomCollectionsTableViewController" customModule="shopify_summer_2019" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7rm-5F-rjY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -25,13 +24,14 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Custom Collections" id="Obw-2n-fYS"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7xf-cJ-n9J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="984.79999999999995" y="123.68815592203899"/>
         </scene>
         <!--Details Table View Controller-->
         <scene sceneID="e0Z-yk-83d">
             <objects>
-                <tableViewController storyboardIdentifier="detailsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iaP-fB-pRv" customClass="DetailsTableViewController" customModule="shopify_winter_2019" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="detailsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iaP-fB-pRv" customClass="DetailsTableViewController" customModule="shopify_summer_2019" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Uf0-ES-nf0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -75,7 +75,6 @@
         <!--Navigation Controller-->
         <scene sceneID="YLZ-Ja-lpE">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="c7U-f0-k6p" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L6D-i3-HWl" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="949-bk-kJH">
@@ -87,6 +86,7 @@
                         <segue destination="bh9-hP-ZIr" kind="relationship" relationship="rootViewController" id="qhN-Xz-dWh"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c7U-f0-k6p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="45.600000000000001" y="123.68815592203899"/>
         </scene>

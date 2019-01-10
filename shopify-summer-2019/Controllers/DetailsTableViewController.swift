@@ -24,6 +24,11 @@ class DetailsTableViewController: UITableViewController {
         fetchCollects()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.hidesBarsOnSwipe = false
+    }
+    
     private func fetchCollects() {
         client.fetchCollects(with: request, collection: collection) { result in
             switch result {

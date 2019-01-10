@@ -20,6 +20,10 @@ class CustomCollectionsTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "CustomCollectionCell", bundle: nil), forCellReuseIdentifier: "CollectionCell")
         fetchCustomCollections()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.hidesBarsOnSwipe = true
+    }
 
     
     private func fetchCustomCollections() {
@@ -29,7 +33,6 @@ class CustomCollectionsTableViewController: UITableViewController {
                 print(error.reason)
             case .success(let response):
                 DispatchQueue.main.async {
-                    print(response)
                     self.collections.append(contentsOf: response.collections)
                     self.tableView.reloadData()
                 }
@@ -38,6 +41,7 @@ class CustomCollectionsTableViewController: UITableViewController {
     }
 
 }
+
 
 // MARK: - Table view data source
 

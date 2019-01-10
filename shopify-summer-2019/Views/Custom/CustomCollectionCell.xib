@@ -19,9 +19,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="407" height="189.5"/>
                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="QMs-B2-7Vg">
-                        <rect key="frame" x="193.5" y="85" width="20" height="20"/>
-                    </activityIndicatorView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2RI-po-659">
                         <rect key="frame" x="16" y="11" width="375" height="167.5"/>
                         <subviews>
@@ -64,11 +61,11 @@
                             <constraint firstItem="sOV-lB-ihJ" firstAttribute="top" secondItem="2RI-po-659" secondAttribute="top" id="1EP-EA-C20"/>
                             <constraint firstAttribute="trailing" secondItem="AyH-OS-zmp" secondAttribute="trailing" constant="8" id="2FF-OA-tst"/>
                             <constraint firstItem="Yzo-Jx-8oV" firstAttribute="centerX" secondItem="2RI-po-659" secondAttribute="centerX" id="4cU-Xn-qLS"/>
+                            <constraint firstAttribute="bottom" secondItem="Yzo-Jx-8oV" secondAttribute="bottom" constant="1" id="4r2-RQ-QR9"/>
                             <constraint firstItem="sOV-lB-ihJ" firstAttribute="leading" secondItem="2RI-po-659" secondAttribute="leading" id="Bdk-Qr-hHb"/>
                             <constraint firstItem="BNj-EQ-Jmf" firstAttribute="top" secondItem="2RI-po-659" secondAttribute="top" constant="8" id="KSm-Eo-J2a"/>
                             <constraint firstAttribute="bottom" secondItem="AyH-OS-zmp" secondAttribute="bottom" priority="250" constant="115.5" id="Ot3-g4-7Yi"/>
                             <constraint firstItem="BNj-EQ-Jmf" firstAttribute="leading" secondItem="2RI-po-659" secondAttribute="leading" constant="8" id="QcS-gr-NKs"/>
-                            <constraint firstItem="Yzo-Jx-8oV" firstAttribute="centerY" secondItem="2RI-po-659" secondAttribute="centerY" id="h8i-RE-LTf"/>
                             <constraint firstAttribute="trailing" secondItem="sOV-lB-ihJ" secondAttribute="trailing" id="kj1-YB-xB7"/>
                             <constraint firstAttribute="trailing" secondItem="BNj-EQ-Jmf" secondAttribute="trailing" priority="250" constant="326" id="s3Q-jX-xeo"/>
                             <constraint firstItem="AyH-OS-zmp" firstAttribute="leading" secondItem="2RI-po-659" secondAttribute="leading" constant="8" id="se0-k2-CzB"/>
@@ -77,18 +74,15 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="2RI-po-659" secondAttribute="bottom" constant="11" id="5qN-Bn-BPT"/>
-                    <constraint firstItem="QMs-B2-7Vg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="KeP-tr-CGE"/>
                     <constraint firstAttribute="trailing" secondItem="2RI-po-659" secondAttribute="trailing" constant="16" id="Ltl-oO-9en"/>
                     <constraint firstItem="2RI-po-659" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="M8B-D1-n5N"/>
                     <constraint firstItem="2RI-po-659" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="McB-ET-T98"/>
                     <constraint firstItem="2RI-po-659" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="POZ-ay-HIl"/>
-                    <constraint firstItem="QMs-B2-7Vg" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="oqj-GJ-CdG"/>
                     <constraint firstItem="2RI-po-659" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="ov1-de-rs9"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="activityIndicator" destination="QMs-B2-7Vg" id="hss-A5-HqN"/>
                 <outlet property="collectionImageView" destination="Yzo-Jx-8oV" id="kBj-ul-dfs"/>
                 <outlet property="containerView" destination="2RI-po-659" id="air-VC-SXK"/>
                 <outlet property="descriptionLabel" destination="AyH-OS-zmp" id="r5c-6Z-oyh"/>

@@ -33,6 +33,7 @@
 		2BECDF8321E6FB41002CDF0D /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BECDF8121E6FB41002CDF0D /* ProductCell.swift */; };
 		2BECDF8421E6FB41002CDF0D /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BECDF8221E6FB41002CDF0D /* ProductCell.xib */; };
 		2BFD80F121E7D4A100C11358 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFD80F021E7D4A100C11358 /* UIViewController.swift */; };
+		2BFD80F421E7F8FD00C11358 /* AlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFD80F321E7F8FD00C11358 /* AlertDisplayable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		2BECDF8121E6FB41002CDF0D /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		2BECDF8221E6FB41002CDF0D /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
 		2BFD80F021E7D4A100C11358 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		2BFD80F321E7F8FD00C11358 /* AlertDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDisplayable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		2BECDF4121E54FCB002CDF0D /* shopify-summer-2019 */ = {
 			isa = PBXGroup;
 			children = (
+				2BFD80F221E7F8DE00C11358 /* Protocols */,
 				2BECDF6121E55A70002CDF0D /* Models */,
 				2BECDF6921E5640F002CDF0D /* Views */,
 				2BECDF6A21E56424002CDF0D /* Controllers */,
@@ -183,6 +186,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		2BFD80F221E7F8DE00C11358 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				2BFD80F321E7F8FD00C11358 /* AlertDisplayable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -263,6 +274,7 @@
 				2BECDF7E21E59D8B002CDF0D /* DetailsTableViewController.swift in Sources */,
 				2BECDF4321E54FCB002CDF0D /* AppDelegate.swift in Sources */,
 				2BECDF6721E5600F002CDF0D /* CustomCollectionsAPIResponse.swift in Sources */,
+				2BFD80F421E7F8FD00C11358 /* AlertDisplayable.swift in Sources */,
 				2BECDF7C21E592D7002CDF0D /* ProductsAPIResponse.swift in Sources */,
 				2BECDF6E21E56478002CDF0D /* CustomCollectionCell.swift in Sources */,
 				2BECDF5521E55250002CDF0D /* APIClient.swift in Sources */,

@@ -19,9 +19,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="368" height="189.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="fXE-DF-Jpk">
-                        <rect key="frame" x="174" y="85" width="20" height="20"/>
-                    </activityIndicatorView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JGC-o1-49J">
                         <rect key="frame" x="16" y="11" width="336" height="167.5"/>
                         <subviews>
@@ -87,19 +84,16 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="fXE-DF-Jpk" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Q2j-Q5-wWu"/>
                     <constraint firstItem="JGC-o1-49J" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="W90-Gu-Kn6"/>
                     <constraint firstAttribute="trailing" secondItem="JGC-o1-49J" secondAttribute="trailing" constant="16" id="XvX-bL-sTV"/>
                     <constraint firstItem="JGC-o1-49J" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="bHb-LP-nrz"/>
                     <constraint firstItem="JGC-o1-49J" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="mvy-7N-Izg"/>
-                    <constraint firstItem="fXE-DF-Jpk" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="neP-fF-M5a"/>
                     <constraint firstItem="JGC-o1-49J" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="o40-5K-Por"/>
                     <constraint firstAttribute="bottom" secondItem="JGC-o1-49J" secondAttribute="bottom" constant="11" id="whw-Gh-SiB"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="activityIndicator" destination="fXE-DF-Jpk" id="UFN-rJ-vdC"/>
                 <outlet property="containerView" destination="JGC-o1-49J" id="0O3-74-QZn"/>
                 <outlet property="nameLabel" destination="DgR-gw-wij" id="9vJ-P6-bP8"/>
                 <outlet property="productImageView" destination="6bp-UF-SCT" id="JLT-ea-Pf9"/>

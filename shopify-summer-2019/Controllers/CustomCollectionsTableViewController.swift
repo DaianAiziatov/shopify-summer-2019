@@ -8,17 +8,17 @@
 
 import UIKit
 
-class CustomCollectionsTableViewController: UITableViewController {
+class CustomCollectionsTableViewController: UITableViewController, AlertDisplayable {
 
     private var collections = [CustomCollection]()
     private var fileteredCollections = [CustomCollection]()
     private var client = APIClient()
-    private let request = APIRequest()
     private let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.clearsSelectionOnViewWillAppear = false
+        self.addBlurEffect()
+        startLoadingView()
         cellRegistration()
         searchControllerSetup()
         fetchCustomCollections()
@@ -30,17 +30,13 @@ class CustomCollectionsTableViewController: UITableViewController {
 
     
     private func fetchCustomCollections() {
-        loadingAlertStart()
-        client.fetchCustomCollections(with: request) { result in
+        client.fetchCustomCollections() { result in
             switch result {
             case .failure(let error):
-                print(error.reason)
+                self.onFetchFailed(with: error.reason)
             case .success(let response):
-                DispatchQueue.main.async {
-                    self.collections.append(contentsOf: response.collections)
-                    self.tableView.reloadData()
-                    self.dismiss(animated: true, completion: nil)
-                }
+                self.collections.append(contentsOf: response.collections)
+                self.onFetchCompleted()
             }
         }
     }
@@ -58,6 +54,21 @@ class CustomCollectionsTableViewController: UITableViewController {
     
     private func cellRegistration() {
         tableView.register(UINib(nibName: "CustomCollectionCell", bundle: nil), forCellReuseIdentifier: "CollectionCell")
+    }
+    
+    private func onFetchFailed(with reason: String) {
+        self.dismissLoadingView()
+        let title = "Warning"
+        let action = UIAlertAction(title: "OK", style: .default)
+        self.displayAlert(with: title , message: reason, actions: [action])
+    }
+    
+    private func onFetchCompleted() {
+        DispatchQueue.main.async {
+            self.dismissLoadingView()
+            self.tableView.reloadData()
+            self.removeBlurEffect()
+        }
     }
     
 

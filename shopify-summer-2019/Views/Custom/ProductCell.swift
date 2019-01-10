@@ -10,7 +10,6 @@ import UIKit
 
 class ProductCell: UITableViewCell {
     
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -21,6 +20,20 @@ class ProductCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setup()
+    }
+    
+    func configure(with product: Product) {
+        self.product = product
+        containerView.isHidden = false
+        nameLabel.text = product.name
+        vendorLabel.text = product.vendor
+        totalLabel.text = "Total: \(product.totalAvailable ?? 0)"
+        productImageView.downloaded(from: URL(string: product.imageURL)!,
+                                    contentMode: .scaleToFill)
+    }
+    
+    private func setup() {
         containerView.makeBorders(with: 10.0)
         addShadows()
         backgroundColor = .clear
@@ -28,28 +41,6 @@ class ProductCell: UITableViewCell {
         nameLabel.numberOfLines = 0
         vendorLabel.sizeToFit()
         totalLabel.sizeToFit()
-        activityIndicator.hidesWhenStopped = true
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        configure(with: .none)
-    }
-
-    func configure(with product: Product?) {
-        if let product = product {
-            self.product = product
-            containerView.isHidden = false
-            nameLabel.text = product.name
-            vendorLabel.text = product.vendor
-            totalLabel.text = "Total: \(product.totalAvailable ?? 0)"
-            productImageView.downloaded(from: URL(string: product.imageURL)!,
-                                        contentMode: .scaleToFill)
-            activityIndicator.stopAnimating()
-        } else {
-            containerView.isHidden = true
-            activityIndicator.startAnimating()
-        }
     }
     
 }

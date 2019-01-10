@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailsTableViewController: UITableViewController {
+class DetailsTableViewController: UITableViewController, AlertDisplayable {
     
     var collection: CustomCollection!
     
@@ -16,10 +16,11 @@ class DetailsTableViewController: UITableViewController {
     private var collects = [Collect]()
     
     private var client = APIClient()
-    private let request = APIRequest()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.addBlurEffect()
+        startLoadingView()
         self.clearsSelectionOnViewWillAppear = false
         self.title = "Products"
         tableView.register(UINib(nibName: "ProductCell", bundle: nil), forCellReuseIdentifier: "ProductCell")
@@ -33,33 +34,43 @@ class DetailsTableViewController: UITableViewController {
     
     // MARK: - Retrieving the list of collects in a specific collection first
     private func fetchCollects() {
-        loadingAlertStart()
-        client.fetchCollects(with: request, collection: collection) { result in
+        client.fetchCollects(with: collection) { result in
             switch result {
             case .failure(let error):
-                print(error.reason)
+                self.onFetchFailed(with: error.reason)
             case .success(let response):
-                DispatchQueue.main.async {
-                    self.collects.append(contentsOf: response.collects)
-                    self.fetchProducts()
-                }
+                self.collects.append(contentsOf: response.collects)
+                self.fetchProducts()
             }
         }
     }
     
     // MARK: - Finally fetching the products from specific collection
     private func fetchProducts() {
-        client.fetchProducts(with: request, collects: collects) { result in
+        client.fetchProducts(with: collects) { result in
             switch result {
             case .failure(let error):
-                print(error.reason)
+                self.onFetchFailed(with: error.reason)
             case .success(let response):
-                DispatchQueue.main.async {
-                    self.products.append(contentsOf: response.products)
-                    self.tableView.reloadData()
-                    self.dismiss(animated: true, completion: nil)
-                }
+                self.products.append(contentsOf: response.products)
+                self.onFetchCompleted()
             }
+        }
+    }
+    
+    private func onFetchFailed(with reason: String) {
+        self.dismissLoadingView()
+        let title = "Warning"
+        let action = UIAlertAction(title: "OK", style: .default)
+        self.removeBlurEffect()
+        self.displayAlert(with: title , message: reason, actions: [action])
+    }
+    
+    private func onFetchCompleted() {
+        DispatchQueue.main.async {
+            self.dismissLoadingView()
+            self.tableView.reloadData()
+            self.removeBlurEffect()
         }
     }
 

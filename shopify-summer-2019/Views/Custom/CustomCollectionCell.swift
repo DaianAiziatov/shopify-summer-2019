@@ -10,7 +10,6 @@ import UIKit
 
 class CustomCollectionCell: UITableViewCell {
 
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var collectionImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -20,32 +19,24 @@ class CustomCollectionCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setup()
+    }
+    
+    func configure(with collection: CustomCollection) {
+        self.collection = collection
+        containerView.isHidden = false
+        titleLabel.text = collection.title
+        descriptionLabel.text = collection.description
+        collectionImageView.downloaded(from: URL(string: collection.imageURL)!, contentMode: .scaleToFill)
+    }
+    
+    private func setup() {
         containerView.makeBorders(with: 10.0)
         addShadows()
         backgroundColor = .clear
         titleLabel.sizeToFit()
         descriptionLabel.numberOfLines = 0
         descriptionLabel.sizeToFit()
-        activityIndicator.hidesWhenStopped = true
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        configure(with: .none)
-    }
-    
-    func configure(with collection: CustomCollection?) {
-        if let collection = collection {
-            self.collection = collection
-            containerView.isHidden = false
-            titleLabel.text = collection.title
-            descriptionLabel.text = collection.description
-            collectionImageView.downloaded(from: URL(string: collection.imageURL)!, contentMode: .scaleToFill)
-            activityIndicator.stopAnimating()
-        } else {
-            containerView.isHidden = true
-            activityIndicator.startAnimating()
-        }
     }
     
 }

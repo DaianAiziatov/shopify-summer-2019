@@ -18,25 +18,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="uH6-Ba-O7y">
-                                <rect key="frame" x="87" y="184" width="200" height="200"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shopify Coding Challenge Summer 2019" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16m-N4-TtE">
-                                <rect key="frame" x="76" y="606" width="222" height="41"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="66.5" y="602.5" width="242" height="44.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="242" id="o4L-YT-YI9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                <color key="textColor" red="0.36717838048934937" green="0.55728238821029663" blue="0.2414824366569519" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="uH6-Ba-O7y">
+                                <rect key="frame" x="87.5" y="199" width="200" height="196.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="196.5" id="aqt-Tf-MzC"/>
+                                    <constraint firstAttribute="width" constant="200" id="q1y-nc-27I"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.43493756854111743" green="0.56015132496199638" blue="0.20441932372210908" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="16m-N4-TtE" secondAttribute="bottom" constant="20" id="17i-cE-lK2"/>
-                            <constraint firstItem="uH6-Ba-O7y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="164" id="2zG-TY-pvY"/>
-                            <constraint firstItem="uH6-Ba-O7y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="4dY-Et-Ef4"/>
-                            <constraint firstItem="16m-N4-TtE" firstAttribute="top" secondItem="uH6-Ba-O7y" secondAttribute="bottom" priority="750" constant="222" id="4xr-pI-Jkr"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uH6-Ba-O7y" secondAttribute="trailing" constant="88" id="KJQ-my-ZOb"/>
-                            <constraint firstItem="16m-N4-TtE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="76" id="NbS-Fj-hh9"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="16m-N4-TtE" secondAttribute="trailing" constant="77" id="RpJ-hK-3ya"/>
+                            <constraint firstItem="16m-N4-TtE" firstAttribute="top" secondItem="uH6-Ba-O7y" secondAttribute="bottom" priority="750" constant="207" id="AEJ-XC-ZFl"/>
+                            <constraint firstItem="uH6-Ba-O7y" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="CqF-og-R6L"/>
+                            <constraint firstItem="16m-N4-TtE" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="PdL-CK-Ggf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

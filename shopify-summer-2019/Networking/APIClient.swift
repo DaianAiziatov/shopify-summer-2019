@@ -20,10 +20,9 @@ struct APIClient {
     
     //TODO: - Optimize functions
     
-    mutating func fetchCustomCollections(with request: APIRequest,
-                                         completion: @escaping (Result<CustomCollectionsAPIResponse, DataResponseError>) -> Void) {
-        let urlRequest = URLRequest(url: baseURL.appendingPathComponent(request.customCollectionsPath))
-        let parameters = ["access_token" : request.accessToken]
+    mutating func fetchCustomCollections(completion: @escaping (Result<CustomCollectionsAPIResponse, DataResponseError>) -> Void) {
+        let urlRequest = URLRequest(url: baseURL.appendingPathComponent(APIRequest.customCollectionsPath))
+        let parameters = ["access_token" : APIRequest.accessToken]
         var encodedURLRequest = urlRequest.encode(with: parameters)
         encodedURLRequest.setValue("application/json", forHTTPHeaderField: "Accept")
         session.dataTask(with: encodedURLRequest, completionHandler: { data, response, error in
@@ -43,10 +42,10 @@ struct APIClient {
         }).resume()
     }
     
-    mutating func fetchCollects(with request: APIRequest, collection: CustomCollection,
+    mutating func fetchCollects(with collection: CustomCollection,
                                 completion: @escaping (Result<CollectsAPIResponse, DataResponseError>) -> Void) {
-        let urlRequest = URLRequest(url: baseURL.appendingPathComponent(request.collectsPath))
-        let parameters = ["access_token" : request.accessToken,
+        let urlRequest = URLRequest(url: baseURL.appendingPathComponent(APIRequest.collectsPath))
+        let parameters = ["access_token" : APIRequest.accessToken,
                           "collection_id" : "\(collection.id)"]
         var encodedURLRequest = urlRequest.encode(with: parameters)
         encodedURLRequest.setValue("application/json", forHTTPHeaderField: "Accept")
@@ -67,15 +66,15 @@ struct APIClient {
         }).resume()
     }
     
-    mutating func fetchProducts(with request: APIRequest, collects: [Collect],
+    mutating func fetchProducts(with collects: [Collect],
                                 completion: @escaping (Result<ProductsAPIResponse, DataResponseError>) -> Void) {
-        let urlRequest = URLRequest(url: baseURL.appendingPathComponent(request.productsPath))
+        let urlRequest = URLRequest(url: baseURL.appendingPathComponent(APIRequest.productsPath))
         var ids = ""
         for collect in collects {
             ids += "\(collect.productID),"
         }
         ids = String(ids.dropLast())
-        let parameters = ["access_token" : request.accessToken,
+        let parameters = ["access_token" : APIRequest.accessToken,
                           "ids" : ids]
         var encodedURLRequest = urlRequest.encode(with: parameters)
         encodedURLRequest.setValue("application/json", forHTTPHeaderField: "Accept")

@@ -25,6 +25,11 @@ class CustomCollectionsTableViewController: UITableViewController {
         searchController.searchBar.delegate = self
         searchController.searchBar.placeholder = "Search"
         searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.searchBarStyle = .minimal
+        definesPresentationContext = true
+        self.navigationItem.titleView = self.searchController.searchBar;
+        self.navigationItem.hidesSearchBarWhenScrolling = true
+        
         fetchCustomCollections()
     }
     

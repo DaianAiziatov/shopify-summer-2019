@@ -33,10 +33,6 @@ class CustomCollectionCell: UITableViewCell {
         super.prepareForReuse()
         configure(with: .none)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
     
     func configure(with collection: CustomCollection?) {
         if let collection = collection {

@@ -8,14 +8,22 @@
 
 import Foundation
 
-struct Product: Decodable {
+struct Product {
     
     private(set) var name: String
+    private(set) var vendor: String
     private(set) var variants: [Variant]
+    private(set) var imageURL: String
     
     enum CodingKeys: String, CodingKey {
         case name = "title"
+        case vendor
         case variants
+        case image
+    }
+    
+    enum ImageKey: String, CodingKey {
+        case imageURL = "src"
     }
     
     func calculateTotalAvailable() -> Int {
@@ -25,5 +33,19 @@ struct Product: Decodable {
         }
         return total
     }
+}
+
+extension Product: Decodable {
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        name = try values.decode(String.self, forKey: .name)
+        vendor = try values.decode(String.self, forKey: .vendor)
+        variants = try values.decode([Variant].self, forKey: .variants)
+    
+        let image = try values.nestedContainer(keyedBy: ImageKey.self, forKey: .image)
+        imageURL = try image.decode(String.self, forKey: .imageURL)
+    }
+    
 }
 

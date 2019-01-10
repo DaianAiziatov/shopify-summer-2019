@@ -21,6 +21,7 @@ class DetailsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.clearsSelectionOnViewWillAppear = false
+        tableView.register(UINib(nibName: "ProductCell", bundle: nil), forCellReuseIdentifier: "ProductCell")
         fetchCollects()
     }
     
@@ -68,10 +69,25 @@ extension DetailsTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsCell")
-        cell?.textLabel?.text = products[indexPath.row].name
-        cell?.detailTextLabel?.text = "Quantity: \(products[indexPath.row].calculateTotalAvailable())"
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell") as! ProductCell
+        cell.configure(with: products[indexPath.row])
+        return cell
+    }
+    
+}
+
+// MARK: - Table view delegate
+
+extension DetailsTableViewController {
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header: CustomCollectionCell = .fromNib()
+        header.configure(with: collection)
+        return header
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 300.0
     }
     
 }

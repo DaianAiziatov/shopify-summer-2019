@@ -19,12 +19,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="uH6-Ba-O7y">
-                                <rect key="frame" x="87" y="184" width="200" height="195"/>
+                                <rect key="frame" x="87" y="184" width="200" height="200"/>
                             </imageView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="wlr-xt-bkG">
-                                <rect key="frame" x="177" y="387" width="20" height="37"/>
-                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shopify Coding Challenge Summer 2019" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16m-N4-TtE">
                                 <rect key="frame" x="76" y="606" width="222" height="41"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
@@ -37,13 +33,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="16m-N4-TtE" secondAttribute="bottom" constant="20" id="17i-cE-lK2"/>
                             <constraint firstItem="uH6-Ba-O7y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="164" id="2zG-TY-pvY"/>
                             <constraint firstItem="uH6-Ba-O7y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="4dY-Et-Ef4"/>
+                            <constraint firstItem="16m-N4-TtE" firstAttribute="top" secondItem="uH6-Ba-O7y" secondAttribute="bottom" priority="750" constant="222" id="4xr-pI-Jkr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uH6-Ba-O7y" secondAttribute="trailing" constant="88" id="KJQ-my-ZOb"/>
                             <constraint firstItem="16m-N4-TtE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="76" id="NbS-Fj-hh9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="16m-N4-TtE" secondAttribute="trailing" constant="77" id="RpJ-hK-3ya"/>
-                            <constraint firstItem="wlr-xt-bkG" firstAttribute="top" secondItem="uH6-Ba-O7y" secondAttribute="bottom" constant="8" id="RsB-yr-Zeu"/>
-                            <constraint firstItem="16m-N4-TtE" firstAttribute="top" secondItem="wlr-xt-bkG" secondAttribute="bottom" priority="750" constant="182" id="bgP-kt-oBL"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wlr-xt-bkG" secondAttribute="trailing" constant="178" id="fxr-pe-4ux"/>
-                            <constraint firstItem="wlr-xt-bkG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="177" id="ue5-ml-PAg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

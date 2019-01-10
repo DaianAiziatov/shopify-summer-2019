@@ -30,6 +30,8 @@
 		2BECDF7C21E592D7002CDF0D /* ProductsAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BECDF7B21E592D7002CDF0D /* ProductsAPIResponse.swift */; };
 		2BECDF7E21E59D8B002CDF0D /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BECDF7D21E59D8B002CDF0D /* DetailsTableViewController.swift */; };
 		2BECDF8021E6D158002CDF0D /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BECDF7F21E6D158002CDF0D /* UIView.swift */; };
+		2BECDF8321E6FB41002CDF0D /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BECDF8121E6FB41002CDF0D /* ProductCell.swift */; };
+		2BECDF8421E6FB41002CDF0D /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BECDF8221E6FB41002CDF0D /* ProductCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		2BECDF7B21E592D7002CDF0D /* ProductsAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsAPIResponse.swift; sourceTree = "<group>"; };
 		2BECDF7D21E59D8B002CDF0D /* DetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewController.swift; sourceTree = "<group>"; };
 		2BECDF7F21E6D158002CDF0D /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		2BECDF8121E6FB41002CDF0D /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		2BECDF8221E6FB41002CDF0D /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +165,8 @@
 			children = (
 				2BECDF6C21E56478002CDF0D /* CustomCollectionCell.swift */,
 				2BECDF6D21E56478002CDF0D /* CustomCollectionCell.xib */,
+				2BECDF8121E6FB41002CDF0D /* ProductCell.swift */,
+				2BECDF8221E6FB41002CDF0D /* ProductCell.xib */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -234,6 +240,7 @@
 			files = (
 				2BECDF6F21E56478002CDF0D /* CustomCollectionCell.xib in Resources */,
 				2BECDF4D21E54FCD002CDF0D /* LaunchScreen.storyboard in Resources */,
+				2BECDF8421E6FB41002CDF0D /* ProductCell.xib in Resources */,
 				2BECDF4A21E54FCD002CDF0D /* Assets.xcassets in Resources */,
 				2BECDF4821E54FCB002CDF0D /* Main.storyboard in Resources */,
 			);
@@ -263,6 +270,7 @@
 				2BECDF5F21E55A5A002CDF0D /* DataResponseError.swift in Sources */,
 				2BECDF5B21E55908002CDF0D /* APIRequest.swift in Sources */,
 				2BECDF7A21E59034002CDF0D /* Variant.swift in Sources */,
+				2BECDF8321E6FB41002CDF0D /* ProductCell.swift in Sources */,
 				2BECDF7421E58CD7002CDF0D /* Collect.swift in Sources */,
 				2BECDF5921E55899002CDF0D /* URLRequest.swift in Sources */,
 			);

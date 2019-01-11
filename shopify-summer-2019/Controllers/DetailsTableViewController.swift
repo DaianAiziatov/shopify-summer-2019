@@ -19,7 +19,6 @@ class DetailsTableViewController: UITableViewController, AlertDisplayable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.addBlurEffect()
         startLoadingView()
         self.clearsSelectionOnViewWillAppear = false
         self.title = "Products"
@@ -62,7 +61,6 @@ class DetailsTableViewController: UITableViewController, AlertDisplayable {
         self.dismissLoadingView()
         let title = "Warning"
         let action = UIAlertAction(title: "OK", style: .default)
-        self.removeBlurEffect()
         self.displayAlert(with: title , message: reason, actions: [action])
     }
     
@@ -70,7 +68,6 @@ class DetailsTableViewController: UITableViewController, AlertDisplayable {
         DispatchQueue.main.async {
             self.dismissLoadingView()
             self.tableView.reloadData()
-            self.removeBlurEffect()
         }
     }
 

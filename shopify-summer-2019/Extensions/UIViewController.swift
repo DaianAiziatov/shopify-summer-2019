@@ -11,39 +11,29 @@ import UIKit
 extension UIViewController {
     
     func startLoadingView() {
-        let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
         
-        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        let loadingView = UIView(frame: self.view.frame)
+        loadingView.tag = 100
+        loadingView.addBlurEffect()
+    
+        let loadingIndicator = UIActivityIndicatorView()
+        loadingIndicator.center = UIApplication.shared.keyWindow!.center
         loadingIndicator.hidesWhenStopped = true
         loadingIndicator.style = UIActivityIndicatorView.Style.gray
         loadingIndicator.startAnimating();
         
-        alert.view.addSubview(loadingIndicator)
-        present(alert, animated: true, completion: nil)
+        loadingView.addSubview(loadingIndicator)
+        
+        DispatchQueue.main.async {
+            self.view.addSubview(loadingView)
+        }
     }
     
     func dismissLoadingView() {
         DispatchQueue.main.async {
-            if let vc = self.presentedViewController, vc is UIAlertController {
-                self.dismiss(animated: false, completion: nil)
-            }
+            self.view.viewWithTag(100)?.removeFromSuperview()
         }
     }
     
-    func addBlurEffect() {
-        let blurEffect = UIBlurEffect(style: .regular)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = self.view.bounds
-        
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.view.addSubview(blurEffectView)
-    }
-    
-    func removeBlurEffect() {
-        let blurredEffectViews = self.view.subviews.filter{$0 is UIVisualEffectView}
-        blurredEffectViews.forEach{ blurView in
-            blurView.removeFromSuperview()
-        }
-    }
     
 }

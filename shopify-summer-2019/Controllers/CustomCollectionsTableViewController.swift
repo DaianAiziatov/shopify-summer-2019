@@ -17,8 +17,8 @@ class CustomCollectionsTableViewController: UITableViewController, AlertDisplaya
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.addBlurEffect()
-        startLoadingView()
+        self.navigationItem.rightBarButtonItem =
+            UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(fetchCustomCollections))
         cellRegistration()
         searchControllerSetup()
         fetchCustomCollections()
@@ -29,7 +29,10 @@ class CustomCollectionsTableViewController: UITableViewController, AlertDisplaya
     }
 
     
+    @objc
     private func fetchCustomCollections() {
+        print("Loading")
+        startLoadingView()
         client.fetchCustomCollections() { result in
             switch result {
             case .failure(let error):
@@ -67,7 +70,6 @@ class CustomCollectionsTableViewController: UITableViewController, AlertDisplaya
         DispatchQueue.main.async {
             self.dismissLoadingView()
             self.tableView.reloadData()
-            self.removeBlurEffect()
         }
     }
     

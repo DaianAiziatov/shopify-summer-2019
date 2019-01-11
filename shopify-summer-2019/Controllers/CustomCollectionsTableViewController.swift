@@ -1,6 +1,6 @@
 //
 //  CustomCollectionsTableViewController.swift
-//  shopify-winter-2019
+//  shopify-summer-2019
 //
 //  Created by Daian Aiziatov on 08/01/2019.
 //  Copyright © 2019 Daian Aiziatov. All rights reserved.
@@ -18,7 +18,7 @@ class CustomCollectionsTableViewController: UITableViewController, AlertDisplaya
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem =
-            UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(fetchCustomCollections))
+            UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(reloadData))
         cellRegistration()
         searchControllerSetup()
         fetchCustomCollections()
@@ -27,11 +27,14 @@ class CustomCollectionsTableViewController: UITableViewController, AlertDisplaya
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.hidesBarsOnSwipe = true
     }
-
     
     @objc
+    private func reloadData() {
+        collections.removeAll()
+        fetchCustomCollections()
+    }
+    
     private func fetchCustomCollections() {
-        print("Loading")
         startLoadingView()
         client.fetchCustomCollections() { result in
             switch result {

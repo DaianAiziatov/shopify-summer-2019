@@ -1,6 +1,6 @@
 //
 //  APIClient.swift
-//  shopify-winter-2019
+//  shopify-summer-2019
 //
 //  Created by Daian Aiziatov on 08/01/2019.
 //  Copyright © 2019 Daian Aiziatov. All rights reserved.
@@ -18,7 +18,7 @@ struct APIClient {
         return URLSession.shared
     }()
     
-    //TODO: - Optimize functions
+    // MARK: - Fetching Collections
     
     mutating func fetchCustomCollections(completion: @escaping (Result<CustomCollectionsAPIResponse, DataResponseError>) -> Void) {
         let urlRequest = URLRequest(url: baseURL.appendingPathComponent(APIRequest.customCollectionsPath))
@@ -41,6 +41,8 @@ struct APIClient {
             completion(Result.success(decodedResponse))
         }).resume()
     }
+    
+    // MARK: - Fetching Collects
     
     mutating func fetchCollects(with collection: CustomCollection,
                                 completion: @escaping (Result<CollectsAPIResponse, DataResponseError>) -> Void) {
@@ -65,6 +67,8 @@ struct APIClient {
             completion(Result.success(decodedResponse))
         }).resume()
     }
+    
+    // MARK: - Fetching Products
     
     mutating func fetchProducts(with collects: [Collect],
                                 completion: @escaping (Result<ProductsAPIResponse, DataResponseError>) -> Void) {

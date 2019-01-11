@@ -1,4 +1,4 @@
-<img src="/shopify-summer-2019/Assets.xcassets/AppIcon.appiconset/Icon-180.png" align="right"/>
+<img src="/shopify-summer-2019/Assets.xcassets/AppIcon.appiconset/180.png" align="right"/>
 
 ## Shopify Mobile Developer Intern Challenge - Summer 2019
 
@@ -26,15 +26,19 @@ To fetch the products for a custom collection you will need to retrieve the list
 
 Then load the product details with each product_id in the collect list: https://shopicruit.myshopify.com/admin/products.json?ids=2759137027,2759143811&page=1&access_token=c32313df0d0ef512ca64d5b336a0d7c6
 
+- ### Extra
+
+Feeling adventurous? In the <b>Collection Details page</b> add the collection details in a card at the top that contains the image, title and body_html of the selected collection. See if you can make the details card height flexible to display the whole description.
+
 ## Demo
 
 - ### Custom Collections list page
-
-![Shopify](demos/screenshot_1.png)
+ 
+![Shopify](demos/screenshot_1.PNG)
 
 - ### Collection Details page
 
-![Shopify](demos/screenshot_2.png)
+![Shopify](demos/screenshot_2.PNG)
 
 - ### Application
 

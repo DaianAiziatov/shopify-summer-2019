@@ -17,10 +17,9 @@ class CustomCollectionsTableViewController: UITableViewController, AlertDisplaya
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.rightBarButtonItem =
-            UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(reloadData))
         cellRegistration()
-        searchControllerSetup()
+        setupSearchController()
+        setupPullToRefresh()
         fetchCustomCollections()
     }
     
@@ -39,7 +38,7 @@ class CustomCollectionsTableViewController: UITableViewController, AlertDisplaya
         client.fetchCustomCollections() { result in
             switch result {
             case .failure(let error):
-                self.onFetchFailed(with: error.reason)
+                self.onFetchFailed(with: error)
             case .success(let response):
                 self.collections.append(contentsOf: response.collections)
                 self.onFetchCompleted()
@@ -47,35 +46,50 @@ class CustomCollectionsTableViewController: UITableViewController, AlertDisplaya
         }
     }
     
-    private func searchControllerSetup() {
+    private func setupSearchController() {
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.delegate = self
         searchController.searchBar.placeholder = "Search"
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.searchBarStyle = .minimal
         definesPresentationContext = true
-        self.navigationItem.titleView = self.searchController.searchBar;
-        self.navigationItem.hidesSearchBarWhenScrolling = true
+        self.navigationItem.searchController = self.searchController
     }
     
     private func cellRegistration() {
         tableView.register(UINib(nibName: "CustomCollectionCell", bundle: nil), forCellReuseIdentifier: "CollectionCell")
     }
     
-    private func onFetchFailed(with reason: String) {
-        self.dismissLoadingView()
-        let title = "Warning"
-        let action = UIAlertAction(title: "OK", style: .default)
-        self.displayAlert(with: title , message: reason, actions: [action])
+    private func setupPullToRefresh() {
+        self.tableView.refreshControl = .init()
+        self.tableView.refreshControl!.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.tableView.refreshControl!.addTarget(self, action: #selector(reloadData), for: .valueChanged)
+    }
+    
+    private func onFetchFailed(with error: DataResponseError) {
+        DispatchQueue.main.async {
+            self.tableView.refreshControl?.endRefreshing()
+            self.dismissLoadingView()
+            self.tableView.reloadData()
+            let title = "Warning"
+            let action = UIAlertAction(title: "Ok", style: .default)
+            self.displayAlert(with: title , message: error.reason, actions: [action])
+            switch error {
+            case .network: self.startLostConnectionView()
+            case .decoding: self.startDecodingErrorView()
+            }
+        }
     }
     
     private func onFetchCompleted() {
         DispatchQueue.main.async {
+            self.tableView.refreshControl?.endRefreshing()
             self.dismissLoadingView()
+            self.dismissLostConnectionView()
+            self.dismissDecodingErrorView()
             self.tableView.reloadData()
         }
     }
-    
 
 }
 
@@ -94,10 +108,12 @@ extension CustomCollectionsTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionCell") as! CustomCollectionCell
-        if searchController.isActive == true && searchController.searchBar.text != "" {
-            cell.configure(with: fileteredCollections[indexPath.row])
-        } else {
-            cell.configure(with: collections[indexPath.row])
+        if !(self.tableView.refreshControl?.isRefreshing)! {
+            if searchController.isActive == true && searchController.searchBar.text != "" {
+                cell.configure(with: fileteredCollections[indexPath.row])
+            } else {
+                cell.configure(with: collections[indexPath.row])
+            }
         }
         return cell
     }
@@ -134,12 +150,12 @@ extension CustomCollectionsTableViewController: UISearchBarDelegate {
                 (description.range(of: searchString!, options: .caseInsensitive).location != NSNotFound)
             return filteredResults
         })
-        tableView.reloadData()
+        self.tableView.reloadData()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchController.searchBar.text = ""
-        tableView.reloadData()
+        self.tableView.reloadData()
     }
     
 }

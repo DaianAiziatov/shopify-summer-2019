@@ -19,8 +19,7 @@ class DetailsTableViewController: UITableViewController, AlertDisplayable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        startLoadingView()
-        self.clearsSelectionOnViewWillAppear = false
+        setupPullToRefresh()
         self.title = "Products"
         tableView.register(UINib(nibName: "ProductCell", bundle: nil), forCellReuseIdentifier: "ProductCell")
         fetchCollects()
@@ -33,10 +32,11 @@ class DetailsTableViewController: UITableViewController, AlertDisplayable {
     
     // MARK: - Retrieving the list of collects in a specific collection first
     private func fetchCollects() {
+        startLoadingView()
         client.fetchCollects(with: collection) { result in
             switch result {
             case .failure(let error):
-                self.onFetchFailed(with: error.reason)
+                self.onFetchFailed(with: error)
             case .success(let response):
                 self.collects.append(contentsOf: response.collects)
                 self.fetchProducts()
@@ -49,7 +49,7 @@ class DetailsTableViewController: UITableViewController, AlertDisplayable {
         client.fetchProducts(with: collects) { result in
             switch result {
             case .failure(let error):
-                self.onFetchFailed(with: error.reason)
+                self.onFetchFailed(with: error)
             case .success(let response):
                 self.products.append(contentsOf: response.products)
                 self.onFetchCompleted()
@@ -57,16 +57,40 @@ class DetailsTableViewController: UITableViewController, AlertDisplayable {
         }
     }
     
-    private func onFetchFailed(with reason: String) {
-        self.dismissLoadingView()
-        let title = "Warning"
-        let action = UIAlertAction(title: "OK", style: .default)
-        self.displayAlert(with: title , message: reason, actions: [action])
+    @objc
+    private func reloadData() {
+        collects.removeAll()
+        products.removeAll()
+        fetchCollects()
+    }
+    
+    private func setupPullToRefresh() {
+        self.tableView.refreshControl = .init()
+        self.tableView.refreshControl!.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.tableView.refreshControl!.addTarget(self, action: #selector(reloadData), for: .valueChanged)
+    }
+    
+    private func onFetchFailed(with error: DataResponseError) {
+        DispatchQueue.main.async {
+            self.tableView.refreshControl?.endRefreshing()
+            self.dismissLoadingView()
+            self.tableView.reloadData()
+            let title = "Warning"
+            let action = UIAlertAction(title: "Ok", style: .default)
+            self.displayAlert(with: title , message: error.reason, actions: [action])
+            switch error {
+            case .network: self.startLostConnectionView()
+            case .decoding: self.startDecodingErrorView()
+            }
+        }
     }
     
     private func onFetchCompleted() {
         DispatchQueue.main.async {
+            self.tableView.refreshControl?.endRefreshing()
             self.dismissLoadingView()
+            self.dismissDecodingErrorView()
+            self.dismissLostConnectionView()
             self.tableView.reloadData()
         }
     }
@@ -83,7 +107,9 @@ extension DetailsTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell") as! ProductCell
-        cell.configure(with: products[indexPath.row])
+        if !(self.tableView.refreshControl?.isRefreshing)! {
+            cell.configure(with: products[indexPath.row])
+        }
         return cell
     }
     

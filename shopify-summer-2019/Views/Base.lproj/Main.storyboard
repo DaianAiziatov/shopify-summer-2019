@@ -22,7 +22,7 @@
                             <outlet property="delegate" destination="bh9-hP-ZIr" id="TXP-bV-BAO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Custom Collections" id="Obw-2n-fYS"/>
+                    <navigationItem key="navigationItem" title="Custom Collections" largeTitleDisplayMode="always" id="Obw-2n-fYS"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7xf-cJ-n9J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

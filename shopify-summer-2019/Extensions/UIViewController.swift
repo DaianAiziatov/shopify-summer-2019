@@ -31,7 +31,11 @@ extension UIViewController {
     
     func dismissLoadingView() {
         DispatchQueue.main.async {
-            self.view.viewWithTag(100)?.removeFromSuperview()
+            UIView.animate(withDuration: 0.3, animations: {
+                self.view.viewWithTag(100)?.alpha = 0
+            }, completion: { _ in
+                self.view.viewWithTag(100)?.removeFromSuperview()
+            })
         }
     }
     

@@ -11,7 +11,7 @@ import UIKit
 class CustomCollectionsTableViewController: UITableViewController, AlertDisplayable {
 
     private var collections = [CustomCollection]()
-    private var fileteredCollections = [CustomCollection]()
+    private var filteredCollections = [CustomCollection]()
     private var client = APIClient()
     private let searchController = UISearchController(searchResultsController: nil)
     
@@ -100,7 +100,7 @@ extension CustomCollectionsTableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchController.isActive == true && searchController.searchBar.text != "" {
-            return fileteredCollections.count
+            return filteredCollections.count
         } else {
             return collections.count
         }
@@ -110,7 +110,7 @@ extension CustomCollectionsTableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionCell") as! CustomCollectionCell
         if !(self.tableView.refreshControl?.isRefreshing)! {
             if searchController.isActive == true && searchController.searchBar.text != "" {
-                cell.configure(with: fileteredCollections[indexPath.row])
+                cell.configure(with: filteredCollections[indexPath.row])
             } else {
                 cell.configure(with: collections[indexPath.row])
             }
@@ -128,7 +128,7 @@ extension CustomCollectionsTableViewController {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let detailsVC = sb.instantiateViewController(withIdentifier: "detailsVC") as! DetailsTableViewController
         if searchController.isActive == true && searchController.searchBar.text != "" {
-            detailsVC.collection = fileteredCollections[indexPath.row]
+            detailsVC.collection = filteredCollections[indexPath.row]
         } else {
             detailsVC.collection = collections[indexPath.row]
         }
@@ -143,7 +143,7 @@ extension CustomCollectionsTableViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         let searchString = searchController.searchBar.text
-        fileteredCollections = collections.filter({ (item) -> Bool in
+        filteredCollections = collections.filter({ (item) -> Bool in
             let title: NSString = item.title as NSString
             let description: NSString = item.description as NSString
             let filteredResults = (title.range(of: searchString!, options: .caseInsensitive).location != NSNotFound) ||

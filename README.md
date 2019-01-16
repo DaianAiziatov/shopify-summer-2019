@@ -38,4 +38,4 @@ Feeling adventurous? In the <b>Collection Details page</b> add the collection de
 
 - ### Application
 
-![Shopify](demos/demo)
+![Shopify](demos/demo.gif)

@@ -28,10 +28,30 @@ class ProductViewController: UIViewController {
             descriptionView.makeBorders(with: 10.0)
         }
     }
-    @IBOutlet weak var vendorLabel: UILabel!
-    @IBOutlet weak var typeLabel: UILabel!
-    @IBOutlet weak var totalLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var vendorLabel: UILabel! {
+        didSet {
+            vendorLabel.text = "Vendor: \(product.vendor)"
+            vendorLabel.sizeToFit()
+        }
+    }
+    @IBOutlet weak var typeLabel: UILabel! {
+        didSet {
+            typeLabel.text = "Product Type: \(product.type)"
+            typeLabel.sizeToFit()
+        }
+    }
+    @IBOutlet weak var totalLabel: UILabel! {
+        didSet {
+            totalLabel.text = "Total: \(product.totalAvailable ?? 0)"
+            totalLabel.sizeToFit()
+        }
+    }
+    @IBOutlet weak var descriptionLabel: UILabel! {
+        didSet {
+            descriptionLabel.text = "Description: \(product.description)"
+            descriptionLabel.sizeToFit()
+        }
+    }
     
     var product: Product!
     
@@ -40,21 +60,18 @@ class ProductViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.largeTitleDisplayMode = .never
+        setupCollectionView()
+    }
+    
+    private func setupCollectionView() {
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         self.collectionView.register(UINib(nibName: "VariantCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "VariantCell")
-        vendorLabel.text = "Vendor: \(product.vendor)"
-        typeLabel.text = "Product Type: \(product.type)"
-        totalLabel.text = "Total: \(product.totalAvailable ?? 0)"
-        descriptionLabel.text = "Description: \(product.description)"
-        totalLabel.sizeToFit()
-        typeLabel.sizeToFit()
-        vendorLabel.sizeToFit()
-        descriptionLabel.sizeToFit()
     }
     
 }
-    
+
+// MARK: - Collection View Data Source
 
 extension ProductViewController: UICollectionViewDataSource {
     
@@ -69,6 +86,8 @@ extension ProductViewController: UICollectionViewDataSource {
     }
     
 }
+
+// MARK: - Collection View Delegate Flow Layout
 
 extension ProductViewController: UICollectionViewDelegateFlowLayout {
     

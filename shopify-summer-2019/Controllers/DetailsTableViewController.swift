@@ -103,7 +103,7 @@ extension DetailsTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell") as! ProductCell
+        let cell: ProductCell = .fromNib()
         if !(self.tableView.refreshControl?.isRefreshing)! {
             cell.configure(with: products[indexPath.row])
         }

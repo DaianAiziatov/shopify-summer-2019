@@ -103,7 +103,7 @@ extension CustomCollectionsTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionCell") as! CustomCollectionCell
+        let cell: CustomCollectionCell = .fromNib()
         if !(self.tableView.refreshControl?.isRefreshing)! {
             if searchController.isActive == true && searchController.searchBar.text != "" {
                 cell.configure(with: filteredCollections[indexPath.row])

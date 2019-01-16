@@ -23,10 +23,6 @@ class CustomCollectionsTableViewController: UITableViewController, AlertDisplaya
         fetchCustomCollections()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.hidesBarsOnSwipe = true
-    }
-    
     @objc
     private func reloadData() {
         collections.removeAll()

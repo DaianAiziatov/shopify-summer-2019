@@ -10,9 +10,13 @@ import Foundation
 
 struct Variant: Decodable {
     
+    private(set) var title: String
+    private(set) var price: String
     private(set) var quantity: Int
     
     enum CodingKeys: String, CodingKey {
+        case title
+        case price
         case quantity = "inventory_quantity"
     }
 }

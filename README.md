@@ -32,14 +32,10 @@ Feeling adventurous? In the <b>Collection Details page</b> add the collection de
 
 ## Demo
 
-- ### Custom Collections list page
+- ### Screenshots
  
-![Shopify](demos/screenshot_1.PNG)
-
-- ### Collection Details page
-
-![Shopify](demos/screenshot_2.PNG)
+![Shopify](demos/screenshot.png)
 
 - ### Application
 
-![Shopify](demos/demo.gif)
+![Shopify](demos/demo)

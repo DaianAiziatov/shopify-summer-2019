@@ -11,14 +11,18 @@ import Foundation
 struct Product {
     
     private(set) var name: String
+    private(set) var description: String
     private(set) var vendor: String
+    private(set) var type: String
     private(set) var variants: [Variant]
     private(set) var imageURL: String
     private(set) var totalAvailable: Int?
     
     enum CodingKeys: String, CodingKey {
         case name = "title"
+        case description = "body_html"
         case vendor
+        case type = "product_type"
         case variants
         case image
     }
@@ -41,7 +45,9 @@ extension Product: Decodable {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         name = try values.decode(String.self, forKey: .name)
+        description = try values.decode(String.self, forKey: .description)
         vendor = try values.decode(String.self, forKey: .vendor)
+        type = try values.decode(String.self, forKey: .type)
         variants = try values.decode([Variant].self, forKey: .variants)
         
         let image = try values.nestedContainer(keyedBy: ImageKey.self, forKey: .image)

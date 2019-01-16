@@ -25,11 +25,6 @@ class DetailsTableViewController: UITableViewController, AlertDisplayable {
         fetchCollects()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = false
-        self.navigationController?.hidesBarsOnSwipe = false
-    }
-    
     // MARK: - Retrieving the list of collects in a specific collection first
     private func fetchCollects() {
         startLoadingView()
@@ -94,6 +89,8 @@ class DetailsTableViewController: UITableViewController, AlertDisplayable {
             self.tableView.reloadData()
         }
     }
+    
+    
 
 }
 
@@ -122,6 +119,7 @@ extension DetailsTableViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header: CustomCollectionCell = .fromNib()
         header.configure(with: collection)
+        header.containerView.backgroundColor = #colorLiteral(red: 0.3671783805, green: 0.5572823882, blue: 0.2414824367, alpha: 0.5)
         return header
     }
     
@@ -129,6 +127,13 @@ extension DetailsTableViewController {
         let header: CustomCollectionCell = .fromNib()
         header.configure(with: collection)
         return header.bounds.height
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let productVC = sb.instantiateViewController(withIdentifier: "productVC") as! ProductViewController
+        productVC.product = products[indexPath.row]
+        self.navigationController?.pushViewController(productVC, animated: true)
     }
     
 }

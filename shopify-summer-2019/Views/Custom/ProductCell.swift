@@ -25,7 +25,6 @@ class ProductCell: UITableViewCell {
     
     func configure(with product: Product) {
         self.product = product
-        containerView.isHidden = false
         nameLabel.text = product.name
         vendorLabel.text = product.vendor
         totalLabel.text = "Total: \(product.totalAvailable ?? 0)"

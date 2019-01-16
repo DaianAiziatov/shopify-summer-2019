@@ -8,9 +8,16 @@
 
 import UIKit
 
+var imagesCache = NSCache<NSString, UIImage>()
+
 extension UIImageView {
     
     func downloaded(from url: URL, contentMode mode: UIView.ContentMode) {
+        
+        if let cachedImage = imagesCache.object(forKey: url.absoluteString as NSString) {
+            self.image = cachedImage
+            return
+        }
         
         let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
         activityIndicator.center = self.center
@@ -28,6 +35,7 @@ extension UIImageView {
                 else { return }
             DispatchQueue.main.async() {
                 self.image = image
+                imagesCache.setObject(image, forKey: url.absoluteString as NSString)
                 activityIndicator.stopAnimating()
             }
             }.resume()

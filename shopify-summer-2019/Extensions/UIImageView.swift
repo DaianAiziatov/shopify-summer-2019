@@ -13,7 +13,7 @@ var imagesCache = NSCache<NSString, UIImage>()
 extension UIImageView {
     
     func downloaded(from url: URL, contentMode mode: UIView.ContentMode) {
-        
+        self.contentMode = mode
         if let cachedImage = imagesCache.object(forKey: url.absoluteString as NSString) {
             self.image = cachedImage
             return
@@ -25,7 +25,6 @@ extension UIImageView {
         activityIndicator.hidesWhenStopped = true
         self.addSubview(activityIndicator)
         
-        contentMode = mode
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard
                 let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,

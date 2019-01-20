@@ -19,12 +19,11 @@ class ProductViewController: UIViewController {
     }
     @IBOutlet weak var productImageView: UIImageView! {
         didSet {
-            productImageView.downloaded(from: URL(string: product.imageURL)!, contentMode: .scaleToFill)
+            productImageView.downloaded(from: URL(string: product.imageURL)!, contentMode: .scaleAspectFill)
         }
     }
     @IBOutlet weak var descriptionView: UIView! {
         didSet {
-            descriptionView.addShadows()
             descriptionView.makeBorders(with: 10.0)
         }
     }

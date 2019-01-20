@@ -50,12 +50,10 @@
                                 <color key="backgroundColor" red="0.41658074239999998" green="0.41658074239999998" blue="0.41658074239999998" alpha="0.76990582190000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="AeJ-GX-pKW" firstAttribute="leading" secondItem="qDQ-Id-och" secondAttribute="leading" constant="20" symbolic="YES" id="6tO-eb-BBI"/>
-                                    <constraint firstAttribute="width" constant="267" id="B43-u2-m4e"/>
                                     <constraint firstItem="LIJ-RL-JjE" firstAttribute="centerX" secondItem="qDQ-Id-och" secondAttribute="centerX" id="FKw-9i-rll"/>
                                     <constraint firstAttribute="trailing" secondItem="AeJ-GX-pKW" secondAttribute="trailing" priority="250" constant="188" id="Lfa-Q9-xMX"/>
                                     <constraint firstItem="jgo-xm-THd" firstAttribute="leading" secondItem="qDQ-Id-och" secondAttribute="leading" constant="20" id="NSJ-cL-YBT"/>
                                     <constraint firstItem="LIJ-RL-JjE" firstAttribute="top" secondItem="qDQ-Id-och" secondAttribute="top" constant="20" symbolic="YES" id="OL1-o5-Xv3"/>
-                                    <constraint firstAttribute="height" constant="127" id="PMr-uN-a2G"/>
                                     <constraint firstItem="jgo-xm-THd" firstAttribute="top" secondItem="AeJ-GX-pKW" secondAttribute="bottom" constant="8" symbolic="YES" id="YaA-K4-KT8"/>
                                     <constraint firstItem="AeJ-GX-pKW" firstAttribute="top" secondItem="LIJ-RL-JjE" secondAttribute="bottom" constant="8" symbolic="YES" id="cFF-fm-msb"/>
                                     <constraint firstAttribute="trailing" secondItem="jgo-xm-THd" secondAttribute="trailing" priority="250" constant="155" id="wri-mb-6pF"/>
@@ -64,16 +62,16 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="qDQ-Id-och" secondAttribute="bottom" constant="8" id="2iS-HS-ave"/>
+                            <constraint firstAttribute="bottom" secondItem="qDQ-Id-och" secondAttribute="bottom" priority="750" constant="8" id="2iS-HS-ave"/>
                             <constraint firstItem="qDQ-Id-och" firstAttribute="top" secondItem="7Eb-uL-ttw" secondAttribute="top" constant="8" id="NuF-ey-hIj"/>
                             <constraint firstItem="qDQ-Id-och" firstAttribute="leading" secondItem="7Eb-uL-ttw" secondAttribute="leading" constant="8" id="h9G-rq-dC6"/>
-                            <constraint firstAttribute="trailing" secondItem="qDQ-Id-och" secondAttribute="trailing" constant="8" id="wIv-Nc-nDk"/>
+                            <constraint firstAttribute="trailing" secondItem="qDQ-Id-och" secondAttribute="trailing" priority="750" constant="8" id="wIv-Nc-nDk"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="7Eb-uL-ttw" secondAttribute="bottom" id="98H-Ah-FRZ"/>
+                <constraint firstAttribute="bottom" secondItem="7Eb-uL-ttw" secondAttribute="bottom" priority="750" id="98H-Ah-FRZ"/>
                 <constraint firstItem="7Eb-uL-ttw" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="D2T-GP-Ulr"/>
                 <constraint firstAttribute="trailing" secondItem="7Eb-uL-ttw" secondAttribute="trailing" id="QoB-dO-4EY"/>
                 <constraint firstItem="7Eb-uL-ttw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Why-EX-fQv"/>

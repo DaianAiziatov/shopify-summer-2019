@@ -34,7 +34,7 @@ Feeling adventurous? In the <b>Collection Details page</b> add the collection de
 
 - ### Screenshots
  
-![Shopify](demos/screenshot.png)
+![Shopify](demos/screenshots.png)
 
 - ### Application
 

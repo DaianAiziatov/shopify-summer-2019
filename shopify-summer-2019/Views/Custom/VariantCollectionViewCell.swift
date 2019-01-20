@@ -34,7 +34,7 @@ class VariantCollectionViewCell: UICollectionViewCell {
     func configure(with variant: Variant) {
         self.variant = variant
         nameLabel.text = variant.title
-        priceLabel.text = "Pride: $\(variant.price)"
+        priceLabel.text = "Price: $\(variant.price)"
         quantityLabel.text = "Quantity: \(variant.quantity)"
     }
 
